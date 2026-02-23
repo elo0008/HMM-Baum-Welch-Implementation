@@ -1,6 +1,3 @@
-# HMM-Baum-Welch-Implementation
-Implementation of the Baum–Welch algorithm for Hidden Markov Models with visualization of convergence, transition matrices, and emission probabilities.
-
 # Hidden Markov Model (Baum-Welch) Visual Trainer
 
 ## Student Details
@@ -9,17 +6,25 @@ Register Number: TCR24CS043
 
 ---
 
+## Live Application
+
+The deployed web application can be accessed here:
+
+https://hmm-baum-welch-implementation.onrender.com
+
+---
+
 ## Project Overview
 
 This project implements a Hidden Markov Model (HMM) trained using the Baum-Welch algorithm (Expectation-Maximization method).  
 The system learns model parameters from an observed sequence and provides interactive visualizations of the training process.
 
-The application runs as a local web dashboard built with:
+The application runs as a web dashboard built with:
 
 • Python (Flask backend)  
 • NumPy (numerical computation)  
 • HTML, CSS, Bootstrap (UI)  
-• Chart.js (graphs and visualization)  
+• Chart.js (visualizations)  
 
 ---
 
@@ -57,12 +62,13 @@ project/
 │
 ├── app.py                → Flask backend with Baum-Welch implementation  
 ├── templates/index.html  → Dashboard UI  
-├── static/ (optional)    → CSS/JS files  
+├── requirements.txt      → Dependencies  
+├── Procfile              → Deployment config  
 └── README.md  
 
 ---
 
-## How to Run the Project
+## How to Run Locally
 
 1. Install dependencies
 
@@ -85,9 +91,9 @@ http://127.0.0.1:5000
    0 1 2 1 0 2 1 2  
 
 2. Enter:
-   • Number of hidden states (e.g. 5)  
-   • Number of observation symbols (e.g. 3)  
-   • Number of iterations (e.g. 100)  
+   • Number of hidden states  
+   • Number of observation symbols  
+   • Number of iterations  
 
 3. Click **Train Model**
 
@@ -115,24 +121,6 @@ This project uses the Baum-Welch algorithm, which is a special case of the Expec
 
 ---
 
-## Mathematical Formulas
-
-Forward:
-
-α_t(j) = [ Σ_i α_{t−1}(i) * A_ij ] * B_j(O_t)
-
-Backward:
-
-β_t(i) = Σ_j A_ij * B_j(O_{t+1}) * β_{t+1}(j)
-
-Parameter Updates:
-
-A_ij = Σ_t ξ_t(i,j) / Σ_t γ_t(i)  
-B_j(k) = Σ_{t : O_t = k} γ_t(j) / Σ_t γ_t(j)  
-π_i = γ_1(i)
-
----
-
 ## Educational Purpose
 
 This project demonstrates:
@@ -144,27 +132,10 @@ This project demonstrates:
 
 ---
 
-## Future Improvements
-
-• Viterbi decoding visualization  
-• Multiple observation sequence support  
-• Model saving/loading feature  
-• Cloud deployment version  
-
----
-
-## Submission Notes
-
-• Repository must be public  
-• Include README.md  
-• Include source code  
-• Provide instructions to run  
-
----
-
 ## Status
 
 ✔ Baum-Welch implementation complete  
 ✔ Visualization dashboard complete  
 ✔ Interactive training system complete  
-✔ Ready for submission
+✔ Live deployment available  
+✔ Ready for submission  
